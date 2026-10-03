@@ -14,9 +14,6 @@
 <rect x="280" y="296" width="20" height="90" rx="10" fill="#128061"/>
 <rect x="312" y="324" width="20" height="34" rx="10" fill="#128061"/>
 </g>
-<g filter="url(#filter2_d_75_760)">
-<circle cx="362" cy="118" r="14" fill="#61EDB0"/>
-</g>
 </g>
 <defs>
 <filter id="filter0_f_75_760" x="-11" y="-11" width="534" height="534" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
@@ -30,16 +27,6 @@
 <feOffset dy="18"/>
 <feGaussianBlur stdDeviation="18"/>
 <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.22 0"/>
-<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_75_760"/>
-<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_75_760" result="shape"/>
-</filter>
-<filter id="filter2_d_75_760" x="332" y="88" width="60" height="60" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-<feMorphology radius="2" operator="dilate" in="SourceAlpha" result="effect1_dropShadow_75_760"/>
-<feOffset/>
-<feGaussianBlur stdDeviation="7"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0.38 0 0 0 0 0.93 0 0 0 0 0.69 0 0 0 0.55 0"/>
 <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_75_760"/>
 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_75_760" result="shape"/>
 </filter>
