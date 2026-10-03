@@ -22,16 +22,16 @@ export default function PrivacyPage() {
             </h1>
             <dl className="mt-6 grid gap-3 text-sm text-muted sm:grid-cols-3">
               <div>
-                <dt className="font-semibold text-foreground">Status</dt>
-                <dd>DRAFT</dd>
-              </div>
-              <div>
                 <dt className="font-semibold text-foreground">Version</dt>
                 <dd>0.1</dd>
               </div>
               <div>
                 <dt className="font-semibold text-foreground">Applies to</dt>
                 <dd>BioClerk desktop app</dd>
+              </div>
+              <div>
+                <dt className="font-semibold text-foreground">Last modified</dt>
+                <dd>October 2, 2026</dd>
               </div>
             </dl>
           </div>
@@ -48,8 +48,7 @@ export default function PrivacyPage() {
           </p>
 
           <div className="legal-callout">
-            <strong>The short version, if you read nothing else:</strong> by
-            default, BioClerk never sends your dictation anywhere. Everything
+            <strong>BioClerk</strong> never sends your dictation anywhere. Everything
             below describes the narrow set of things that are genuinely
             necessary to sell and license the software, plus one feature you
             have to turn on yourself before any dictation content leaves your

@@ -7,7 +7,6 @@ import { BrandLogo } from "./brand-logo";
 
 const links = [
   { href: "/#features", label: "Features", match: "features" as const },
-  { href: "/#privacy", label: "Privacy", match: "privacy-section" as const },
   { href: "/privacy", label: "Privacy Policy", match: "privacy" as const },
   { href: "/terms", label: "Terms", match: "terms" as const },
 ];
@@ -21,7 +20,6 @@ function isActive(
   if (match === "terms") return pathname === "/terms";
   if (pathname !== "/") return false;
   if (match === "features") return hash === "#features";
-  if (match === "privacy-section") return hash === "#privacy";
   return false;
 }
 
