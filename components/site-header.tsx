@@ -150,10 +150,12 @@ export function SiteHeader({
             Support
           </a>
           <a
-            href="mailto:support.bioclerk@gmail.com?subject=BioClerk%20license"
+            href="https://apps.microsoft.com/detail/9PH1DPH465R9"
+            target="_blank"
+            rel="noopener noreferrer"
             className="hidden rounded-[10px] bg-brand-deep px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand sm:inline-flex"
           >
-            Buy license
+            Download for Windows
           </a>
           <button
             type="button"
@@ -218,11 +220,13 @@ export function SiteHeader({
             Support
           </a>
           <a
-            href="mailto:support.bioclerk@gmail.com?subject=BioClerk%20license"
+            href="https://apps.microsoft.com/detail/9PH1DPH465R9"
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-2 rounded-[10px] bg-brand-deep px-3 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-brand"
             onClick={() => setMenuOpen(false)}
           >
-            Buy license
+            Download for Windows
           </a>
         </nav>
       </div>

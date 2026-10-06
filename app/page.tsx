@@ -39,10 +39,12 @@ export default function Home() {
               </p>
               <div className="animate-rise-delay-3 mt-8 flex flex-wrap items-center gap-3">
                 <a
-                  href="mailto:support.bioclerk@gmail.com?subject=BioClerk%20license"
+                  href="https://apps.microsoft.com/detail/9PH1DPH465R9"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="rounded-[10px] bg-brand px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-deep"
                 >
-                  Buy a license
+                  Download for Windows
                 </a>
                 <Link
                   href="/#privacy"
@@ -227,10 +229,12 @@ export default function Home() {
                 .
               </p>
               <a
-                href="mailto:support.bioclerk@gmail.com?subject=BioClerk%20license"
+                href="https://apps.microsoft.com/detail/9PH1DPH465R9"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mt-8 inline-flex rounded-[10px] bg-brand-deep px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand"
               >
-                Contact support
+                Download for Windows
               </a>
             </div>
           </div>
