@@ -190,7 +190,7 @@ export default function Home() {
                 Your dictation stays with you.
               </p>
               <p className="mt-4 text-sm leading-relaxed text-sidebar-muted">
-                The short version: BioClerk never sends your dictation anywhere
+                BioClerk never sends your dictation anywhere
                 unless you turn on “Share data with BioClerk” in Settings.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
