@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { DownloadForWindows } from "@/components/download-for-windows";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
@@ -38,14 +39,10 @@ export default function Home() {
                 speech into text — entirely on your computer.
               </p>
               <div className="animate-rise-delay-3 mt-8 flex flex-wrap items-center gap-3">
-                <a
-                  href="https://apps.microsoft.com/detail/9PH1DPH465R9"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <DownloadForWindows
+                  location="hero"
                   className="rounded-[10px] bg-brand px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-deep"
-                >
-                  Download for Windows
-                </a>
+                />
                 <Link
                   href="/#privacy"
                   className="rounded-[10px] border border-sidebar-muted/40 bg-transparent px-5 py-3 text-sm font-semibold text-white transition-colors hover:border-white/50 hover:bg-white/5"
@@ -228,14 +225,10 @@ export default function Home() {
                 </a>
                 .
               </p>
-              <a
-                href="https://apps.microsoft.com/detail/9PH1DPH465R9"
-                target="_blank"
-                rel="noopener noreferrer"
+              <DownloadForWindows
+                location="bottom_cta"
                 className="mt-8 inline-flex rounded-[10px] bg-brand-deep px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand"
-              >
-                Download for Windows
-              </a>
+              />
             </div>
           </div>
         </section>

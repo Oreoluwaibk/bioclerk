@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useState } from "react";
 import { BrandLogo } from "./brand-logo";
+import { DownloadForWindows } from "./download-for-windows";
 
 const links = [
   { href: "/#features", label: "Features", match: "features" as const },
@@ -149,14 +150,10 @@ export function SiteHeader({
           >
             Support
           </a>
-          <a
-            href="https://apps.microsoft.com/detail/9PH1DPH465R9"
-            target="_blank"
-            rel="noopener noreferrer"
+          <DownloadForWindows
+            location="header"
             className="hidden rounded-[10px] bg-brand-deep px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand sm:inline-flex"
-          >
-            Download for Windows
-          </a>
+          />
           <button
             type="button"
             className={`inline-flex size-10 items-center justify-center rounded-[10px] transition-colors md:hidden ${
@@ -219,15 +216,11 @@ export function SiteHeader({
           >
             Support
           </a>
-          <a
-            href="https://apps.microsoft.com/detail/9PH1DPH465R9"
-            target="_blank"
-            rel="noopener noreferrer"
+          <DownloadForWindows
+            location="mobile_menu"
             className="mt-2 rounded-[10px] bg-brand-deep px-3 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-brand"
-            onClick={() => setMenuOpen(false)}
-          >
-            Download for Windows
-          </a>
+            onNavigate={() => setMenuOpen(false)}
+          />
         </nav>
       </div>
     </header>
