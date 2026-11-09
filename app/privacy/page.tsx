@@ -23,15 +23,15 @@ export default function PrivacyPage() {
             <dl className="mt-6 grid gap-3 text-sm text-muted sm:grid-cols-3">
               <div>
                 <dt className="font-semibold text-foreground">Version</dt>
-                <dd>0.1</dd>
+                <dd>0.2</dd>
               </div>
               <div>
                 <dt className="font-semibold text-foreground">Applies to</dt>
-                <dd>BioClerk desktop app</dd>
+                <dd>BioClerk mobile and desktop apps</dd>
               </div>
               <div>
                 <dt className="font-semibold text-foreground">Last modified</dt>
-                <dd>October 2, 2026</dd>
+                <dd>November 9, 2026</dd>
               </div>
             </dl>
           </div>
@@ -58,9 +58,10 @@ export default function PrivacyPage() {
           <h2 id="what-this-covers">What This Covers</h2>
           <p>
             This policy covers information collected through the BioClerk
-            desktop application and the backend services it talks to (license
-            activation, purchases, and the optional model-improvement upload).
-            It does not cover the content of what your patients tell you — see{" "}
+            mobile and desktop applications and the backend services they talk
+            to (license activation, purchases, and the optional
+            model-improvement upload). It does not cover the content of what
+            your patients tell you — see{" "}
             <a href="#patient-information">Patient Information</a> below for
             why that&apos;s handled differently.
           </p>
@@ -117,9 +118,10 @@ export default function PrivacyPage() {
           <h3>Payment information</h3>
           <p>
             We never see your card details. Payment is processed entirely by
-            Paystack; BioClerk&apos;s own systems only receive a transaction
-            reference and amount, never your card number or similar payment
-            credentials.
+            Paystack on the BioClerk desktop app and Google Play Billing on the
+            BioClerk Android app; BioClerk&apos;s own systems only receive a
+            transaction reference and amount, never your card number or similar
+            payment credentials.
           </p>
 
           <h2 id="how-we-use-it">How We Use It</h2>
@@ -162,9 +164,17 @@ export default function PrivacyPage() {
           <h2 id="who-we-share-it-with">Who We Share It With</h2>
           <p>
             <strong className="text-foreground">Paystack</strong> — processes
-            your payment when you buy a license. Your email and transaction
-            details pass through them; see Paystack&apos;s own privacy policy
-            for how they handle payment data.
+            your payment when you buy a license on the BioClerk desktop app.
+            Your email and transaction details pass through them; see
+            Paystack&apos;s own privacy policy for how they handle payment
+            data.
+          </p>
+          <p>
+            <strong className="text-foreground">Google Play Billing</strong> —
+            processes your payment when you buy a license on the BioClerk
+            Android app. Your email and transaction details pass through them;
+            see Google Play Billing&apos;s own privacy policy for how they
+            handle payment data.
           </p>
           <p>
             <strong className="text-foreground">Google Cloud Storage</strong> —
@@ -278,10 +288,10 @@ export default function PrivacyPage() {
 
           <h2 id="international-transfers">International Transfers</h2>
           <p>
-            Paystack and Google Cloud Storage may process or store information
-            outside the country you&apos;re in. We only work with providers who
-            maintain appropriate safeguards for the information they process on
-            our behalf.
+            Paystack, Google Play Billing, and Google Cloud Storage may process
+            or store information outside the country you&apos;re in. We only
+            work with providers who maintain appropriate safeguards for the
+            information they process on our behalf.
           </p>
 
           <h2 id="changes">Changes to This Policy</h2>

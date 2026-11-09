@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BioClerk Letterhead</title>
+    <style>
+      :root {
+        --ink: #14231f;
+        --muted: #62736e;
+        --border: #dce7e2;
+        --rule: #102b26;
+        --brand: #0e5c45;
+        --page: #e8eeeb;
+        --white: #ffffff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: var(--page);
+        color: var(--ink);
+        font-family: Inter, "Segoe UI", Arial, sans-serif;
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .toolbar {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        padding: 14px 20px;
+        background: rgba(243, 247, 245, 0.96);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .toolbar button {
+        appearance: none;
+        border: 0;
+        border-radius: 10px;
+        background: var(--brand);
+        color: var(--white);
+        font: inherit;
+        font-weight: 600;
+        padding: 10px 16px;
+        cursor: pointer;
+      }
+
+      .toolbar button:hover {
+        background: #167a5b;
+      }
+
+      /* Exact A4 page for screen + print */
+      .sheet {
+        position: relative;
+        width: 210mm;
+        height: 297mm;
+        margin: 24px auto;
+        background: var(--white);
+        padding: 18mm 16mm;
+        box-shadow: 0 12px 40px rgba(16, 43, 38, 0.12);
+        overflow: hidden;
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 24px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-shrink: 0;
+      }
+
+      .brand img {
+        width: 48px;
+        height: 48px;
+        display: block;
+        border-radius: 12px;
+      }
+
+      .brand-text strong {
+        display: block;
+        font-size: 22px;
+        letter-spacing: 0.02em;
+        line-height: 1.1;
+        color: var(--ink);
+      }
+
+      .brand-text a,
+      .footer a {
+        color: var(--muted);
+        text-decoration: none;
+      }
+
+      .brand-text a {
+        font-size: 12px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .header-right {
+        text-align: right;
+        color: var(--muted);
+        font-size: 13px;
+        max-width: 300px;
+        padding-top: 6px;
+        flex-shrink: 1;
+      }
+
+      /*
+        Borders print reliably. Background fills on <hr> are often
+        stripped by browsers unless "Background graphics" is enabled.
+      */
+      .rule {
+        display: block;
+        width: 100%;
+        margin: 18px 0 0;
+        border: 0;
+        border-top: 4px solid #102b26;
+      }
+
+      .rule-thin {
+        display: block;
+        width: 100%;
+        margin: 0 0 12px;
+        border: 0;
+        border-top: 3px solid #102b26;
+      }
+
+      .sheet-footer {
+        position: absolute;
+        left: 16mm;
+        right: 16mm;
+        bottom: 18mm;
+      }
+
+      .footer {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 12px 16px;
+        color: var(--muted);
+        font-size: 13px;
+        white-space: nowrap;
+      }
+
+      .footer .contact-label {
+        font-weight: 700;
+        color: var(--ink);
+        text-transform: lowercase;
+      }
+
+      .footer .sep {
+        display: inline-block;
+        width: 0;
+        height: 13px;
+        border-left: 1px solid #8fa49c;
+        flex-shrink: 0;
+      }
+
+      @media print {
+        * {
+          -webkit-print-color-adjust: exact !important;
+          print-color-adjust: exact !important;
+        }
+
+        html,
+        body {
+          width: 210mm;
+          height: 297mm;
+          background: #fff !important;
+        }
+
+        .toolbar {
+          display: none !important;
+        }
+
+        .sheet {
+          width: 210mm;
+          height: 297mm;
+          margin: 0 !important;
+          padding: 18mm 16mm;
+          box-shadow: none !important;
+          page-break-after: avoid;
+        }
+
+        .sheet-footer {
+          position: absolute;
+          left: 16mm;
+          right: 16mm;
+          bottom: 18mm;
+        }
+
+        .rule,
+        .rule-thin {
+          border-top-color: #102b26 !important;
+        }
+
+        a {
+          color: inherit !important;
+          text-decoration: none !important;
+        }
+      }
+
+      /* Zero page margin — padding on .sheet owns the margins */
+      @page {
+        size: A4;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="toolbar">
+      <button type="button" onclick="window.print()">Print / Save as PDF</button>
+    </div>
+
+    <main class="sheet">
+      <header class="header">
+        <div class="brand">
+          <img src="./brand/logo.svg" alt="BioClerk logo" width="48" height="48" />
+          <div class="brand-text">
+            <strong>BioClerk</strong>
+            <a href="https://bioclerk.com/">bioclerk.com</a>
+          </div>
+        </div>
+        <div class="header-right">
+          Offline clinical dictation<br />
+          Medical transcription app for clinicians · Nigeria
+        </div>
+      </header>
+
+      <div class="rule" role="presentation"></div>
+
+      <div class="sheet-footer">
+        <div class="rule-thin" role="presentation"></div>
+        <footer class="footer">
+          <span class="contact-label">contact us</span>
+          <span class="sep" aria-hidden="true"></span>
+          <a href="mailto:support.bioclerk@gmail.com">support.bioclerk@gmail.com</a>
+          <span class="sep" aria-hidden="true"></span>
+          <a href="https://bioclerk.com/">bioclerk.com</a>
+          <span class="sep" aria-hidden="true"></span>
+          <a href="tel:+2349042956435">+234 904 295 6435</a>
+        </footer>
+      </div>
+    </main>
+  </body>
+</html>

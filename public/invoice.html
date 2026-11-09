@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BioClerk Invoice</title>
+    <style>
+      :root {
+        --ink: #14231f;
+        --muted: #62736e;
+        --border: #dce7e2;
+        --rule: #102b26;
+        --brand: #0e5c45;
+        --soft: #e8f5ef;
+        --page: #f3f7f5;
+        --white: #ffffff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--page);
+        color: var(--ink);
+        font-family: Inter, "Segoe UI", Arial, sans-serif;
+        font-size: 14px;
+        line-height: 1.55;
+      }
+
+      .toolbar {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        padding: 14px 20px;
+        background: rgba(243, 247, 245, 0.92);
+        border-bottom: 1px solid var(--border);
+        backdrop-filter: blur(8px);
+      }
+
+      .toolbar button {
+        appearance: none;
+        border: 0;
+        border-radius: 10px;
+        background: var(--brand);
+        color: var(--white);
+        font: inherit;
+        font-weight: 600;
+        padding: 10px 16px;
+        cursor: pointer;
+      }
+
+      .toolbar button:hover {
+        background: #167a5b;
+      }
+
+      .sheet {
+        width: min(820px, calc(100% - 32px));
+        margin: 24px auto 48px;
+        background: var(--white);
+        padding: 48px 52px 36px;
+        box-shadow: 0 12px 40px rgba(16, 43, 38, 0.08);
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 24px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .brand img {
+        width: 48px;
+        height: 48px;
+        display: block;
+        border-radius: 12px;
+      }
+
+      .brand-text strong {
+        display: block;
+        font-size: 22px;
+        letter-spacing: 0.02em;
+        line-height: 1.1;
+      }
+
+      .brand-text a,
+      .meta a,
+      .footer a {
+        color: var(--muted);
+        text-decoration: none;
+      }
+
+      .brand-text a {
+        font-size: 12px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .header-right {
+        text-align: right;
+        color: var(--muted);
+        font-size: 13px;
+        max-width: 300px;
+      }
+
+      .rule {
+        height: 4px;
+        background: var(--rule);
+        margin: 22px 0 28px;
+        border: 0;
+      }
+
+      .rule-thin {
+        height: 2px;
+        background: var(--rule);
+        margin: 36px 0 18px;
+        border: 0;
+      }
+
+      .meta {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 24px;
+        margin-bottom: 28px;
+      }
+
+      .label {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--brand);
+        margin-bottom: 8px;
+      }
+
+      .bill-to strong {
+        display: block;
+        font-size: 16px;
+        margin-bottom: 2px;
+      }
+
+      .bill-to .org,
+      .bill-to .detail {
+        color: var(--muted);
+      }
+
+      .invoice-meta {
+        text-align: right;
+      }
+
+      .invoice-meta dl {
+        margin: 0;
+        display: grid;
+        grid-template-columns: auto auto;
+        column-gap: 16px;
+        row-gap: 6px;
+        justify-content: end;
+      }
+
+      .invoice-meta dt {
+        color: var(--muted);
+        text-align: right;
+      }
+
+      .invoice-meta dd {
+        margin: 0;
+        font-weight: 600;
+        text-align: right;
+      }
+
+      h1 {
+        margin: 0 0 8px;
+        font-size: 28px;
+        letter-spacing: -0.02em;
+      }
+
+      .intro {
+        color: var(--muted);
+        margin: 0 0 22px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 8px 0 18px;
+      }
+
+      th {
+        text-align: left;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--brand);
+        background: var(--soft);
+        padding: 12px 14px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      td {
+        padding: 14px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+      }
+
+      th:nth-child(2),
+      th:nth-child(3),
+      th:nth-child(4),
+      td:nth-child(2),
+      td:nth-child(3),
+      td:nth-child(4) {
+        text-align: right;
+        white-space: nowrap;
+      }
+
+      .totals {
+        width: min(320px, 100%);
+        margin-left: auto;
+      }
+
+      .totals-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 8px 0;
+        color: var(--muted);
+      }
+
+      .totals-row.grand {
+        margin-top: 6px;
+        padding-top: 12px;
+        border-top: 2px solid var(--rule);
+        color: var(--ink);
+        font-size: 16px;
+        font-weight: 700;
+      }
+
+      .notes {
+        margin-top: 28px;
+        padding: 16px 18px;
+        background: var(--soft);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+      }
+
+      .notes p {
+        margin: 6px 0 0;
+        color: var(--muted);
+      }
+
+      .closing {
+        margin-top: 36px;
+      }
+
+      .closing .regards {
+        margin-bottom: 28px;
+      }
+
+      .closing .name {
+        font-weight: 700;
+      }
+
+      .closing .title {
+        color: var(--muted);
+      }
+
+      .footer {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px 18px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .footer .contact-label {
+        font-weight: 700;
+        color: var(--ink);
+        text-transform: lowercase;
+      }
+
+      .footer .sep {
+        width: 1px;
+        height: 14px;
+        background: #c5d4ce;
+      }
+
+      [contenteditable="true"] {
+        outline: none;
+        border-radius: 4px;
+      }
+
+      [contenteditable="true"]:hover,
+      [contenteditable="true"]:focus {
+        background: rgba(232, 245, 239, 0.65);
+        box-shadow: inset 0 0 0 1px #cfebdd;
+      }
+
+      @media print {
+        body {
+          background: white;
+        }
+
+        .toolbar {
+          display: none !important;
+        }
+
+        .sheet {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+          box-shadow: none;
+        }
+
+        [contenteditable="true"]:hover,
+        [contenteditable="true"]:focus {
+          background: transparent;
+          box-shadow: none;
+        }
+
+        a {
+          color: inherit !important;
+          text-decoration: none !important;
+        }
+      }
+
+      @page {
+        size: A4;
+        margin: 18mm 16mm;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="toolbar">
+      <button type="button" onclick="window.print()">Print / Save as PDF</button>
+    </div>
+
+    <main class="sheet">
+      <header class="header">
+        <div class="brand">
+          <img src="./brand/logo.svg" alt="BioClerk logo" width="48" height="48" />
+          <div class="brand-text">
+            <strong>BioClerk</strong>
+            <a href="https://bioclerk.com/">bioclerk.com</a>
+          </div>
+        </div>
+        <div class="header-right">
+          Offline clinical dictation<br />
+          Medical transcription app for clinicians · Nigeria
+        </div>
+      </header>
+
+      <hr class="rule" />
+
+      <section class="meta">
+        <div class="bill-to">
+          <div class="label">Bill to</div>
+          <strong contenteditable="true">[Customer Name]</strong>
+          <div class="detail" contenteditable="true">[customer@email.com]</div>
+        </div>
+        <div class="invoice-meta">
+          <div class="label">Invoice</div>
+          <dl>
+            <dt>Invoice #</dt>
+            <dd contenteditable="true">INV-2026-001</dd>
+            <dt>Date</dt>
+            <dd contenteditable="true">27 October 2026</dd>
+            <dt>Due date</dt>
+            <dd contenteditable="true">10 November 2026</dd>
+          </dl>
+        </div>
+      </section>
+
+      <h1>Invoice</h1>
+      <p class="intro">
+        Thank you for choosing BioClerk. Please find the details of your license
+        purchase below.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Description</th>
+            <th>Qty</th>
+            <th>Unit price</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <strong contenteditable="true">BioClerk desktop license</strong>
+            </td>
+            <td contenteditable="true">1</td>
+            <td contenteditable="true">₦0.00</td>
+            <td contenteditable="true">₦0.00</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="totals">
+        <div class="totals-row">
+          <span>Subtotal</span>
+          <span contenteditable="true">₦0.00</span>
+        </div>
+        <div class="totals-row">
+          <span>Tax</span>
+          <span contenteditable="true">₦0.00</span>
+        </div>
+        <div class="totals-row grand">
+          <span>Total</span>
+          <span contenteditable="true">₦0.00</span>
+        </div>
+      </div>
+
+      <section class="notes">
+        <div class="label">Payment notes</div>
+        <p contenteditable="true">
+          Payment instructions will be shared separately (bank transfer or
+          Paystack). For questions about this invoice, email
+          support.bioclerk@gmail.com.
+        </p>
+      </section>
+
+      <section class="closing">
+        <p class="regards">Regards,</p>
+        <div class="name" contenteditable="true">[Your Name]</div>
+        <div class="title" contenteditable="true">BioClerk</div>
+      </section>
+
+      <hr class="rule-thin" />
+
+      <footer class="footer">
+        <span class="contact-label">contact us</span>
+        <span class="sep" aria-hidden="true"></span>
+        <a href="mailto:support.bioclerk@gmail.com">support.bioclerk@gmail.com</a>
+        <span class="sep" aria-hidden="true"></span>
+        <a href="https://bioclerk.com/">bioclerk.com</a>
+        <span class="sep" aria-hidden="true"></span>
+        <a href="tel:+2349042956435">+234 904 295 6435</a>
+      </footer>
+    </main>
+  </body>
+</html>

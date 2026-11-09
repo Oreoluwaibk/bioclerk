@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>BioClerk Invoice</title>
+    <style>
+      @page {
+        size: A4;
+        margin: 16mm;
+      }
+      body {
+        margin: 0;
+        font-family: Calibri, Arial, sans-serif;
+        color: #14231f;
+        font-size: 14px;
+        line-height: 1.55;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      .brand-name {
+        font-size: 22px;
+        font-weight: bold;
+        line-height: 1.1;
+      }
+      .brand-url {
+        font-size: 12px;
+        color: #62736e;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+      .tagline {
+        font-size: 13px;
+        color: #62736e;
+        text-align: right;
+        line-height: 1.45;
+      }
+      .rule {
+        border-top: 4px solid #102b26;
+        height: 4px;
+        margin: 18px 0 22px 0;
+        font-size: 1px;
+      }
+      .rule-thin {
+        border-top: 3px solid #102b26;
+        height: 3px;
+        margin: 28px 0 14px 0;
+        font-size: 1px;
+      }
+      .label {
+        font-size: 11px;
+        font-weight: bold;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #0e5c45;
+        margin-bottom: 8px;
+      }
+      .muted {
+        color: #62736e;
+      }
+      .meta td {
+        vertical-align: top;
+        width: 50%;
+      }
+      .invoice-meta {
+        text-align: right;
+      }
+      .invoice-meta table {
+        width: auto;
+        margin-left: auto;
+      }
+      .invoice-meta td {
+        padding: 2px 0 2px 14px;
+        font-size: 13px;
+      }
+      .invoice-meta .k {
+        color: #62736e;
+        text-align: right;
+        white-space: nowrap;
+      }
+      .invoice-meta .v {
+        font-weight: bold;
+        text-align: right;
+        white-space: nowrap;
+      }
+      h1 {
+        font-size: 28px;
+        margin: 8px 0;
+      }
+      .intro {
+        color: #62736e;
+        margin: 0 0 18px 0;
+      }
+      .items th {
+        background: #e8f5ef;
+        color: #0e5c45;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        text-align: left;
+        padding: 12px 14px;
+        border-bottom: 1px solid #dce7e2;
+      }
+      .items th.num,
+      .items td.num {
+        text-align: right;
+        white-space: nowrap;
+      }
+      .items td {
+        padding: 14px;
+        border-bottom: 1px solid #dce7e2;
+        vertical-align: top;
+      }
+      .totals {
+        width: 280px;
+        margin-left: auto;
+        margin-top: 10px;
+      }
+      .totals td {
+        padding: 6px 0;
+        color: #62736e;
+      }
+      .totals td.amt {
+        text-align: right;
+      }
+      .totals tr.grand td {
+        border-top: 2px solid #102b26;
+        padding-top: 12px;
+        color: #14231f;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      .notes {
+        margin-top: 24px;
+        padding: 14px 16px;
+        background: #e8f5ef;
+        border: 1px solid #dce7e2;
+      }
+      .closing {
+        margin-top: 32px;
+      }
+      .closing .name {
+        font-weight: bold;
+        margin-top: 24px;
+      }
+      .footer {
+        font-size: 13px;
+        color: #62736e;
+      }
+      .footer strong {
+        color: #14231f;
+      }
+      .sep {
+        color: #8fa49c;
+        padding: 0 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td width="56" valign="middle">
+          <img src="brand/logo.png" width="48" height="48" alt="BioClerk" />
+        </td>
+        <td valign="middle">
+          <div class="brand-name">BioClerk</div>
+          <div class="brand-url">bioclerk.com</div>
+        </td>
+        <td class="tagline" valign="middle">
+          Offline clinical dictation<br />
+          Medical transcription app for clinicians · Nigeria
+        </td>
+      </tr>
+    </table>
+    <div class="rule">&nbsp;</div>
+
+    <table class="meta">
+      <tr>
+        <td>
+          <div class="label">Bill to</div>
+          <div style="font-weight: bold; font-size: 16px">[Customer Name]</div>
+          <div class="muted">[customer@email.com]</div>
+        </td>
+        <td class="invoice-meta">
+          <div class="label">Invoice</div>
+          <table>
+            <tr>
+              <td class="k">Invoice #</td>
+              <td class="v">INV-2026-001</td>
+            </tr>
+            <tr>
+              <td class="k">Date</td>
+              <td class="v">27 October 2026</td>
+            </tr>
+            <tr>
+              <td class="k">Due date</td>
+              <td class="v">10 November 2026</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+
+    <h1>Invoice</h1>
+    <p class="intro">
+      Thank you for choosing BioClerk. Please find the details of your license
+      purchase below.
+    </p>
+
+    <table class="items">
+      <tr>
+        <th>Description</th>
+        <th class="num">Qty</th>
+        <th class="num">Unit price</th>
+        <th class="num">Amount</th>
+      </tr>
+      <tr>
+        <td><strong>BioClerk desktop license</strong></td>
+        <td class="num">1</td>
+        <td class="num">₦0.00</td>
+        <td class="num">₦0.00</td>
+      </tr>
+    </table>
+
+    <table class="totals">
+      <tr>
+        <td>Subtotal</td>
+        <td class="amt">₦0.00</td>
+      </tr>
+      <tr>
+        <td>Tax</td>
+        <td class="amt">₦0.00</td>
+      </tr>
+      <tr class="grand">
+        <td>Total</td>
+        <td class="amt">₦0.00</td>
+      </tr>
+    </table>
+
+    <div class="notes">
+      <div class="label">Payment notes</div>
+      <div class="muted">
+        Payment instructions will be shared separately (bank transfer or
+        Paystack). For questions about this invoice, email
+        support.bioclerk@gmail.com.
+      </div>
+    </div>
+
+    <div class="closing">
+      <div>Regards,</div>
+      <div class="name">[Your Name]</div>
+      <div class="muted">BioClerk</div>
+    </div>
+
+    <div class="rule-thin">&nbsp;</div>
+    <div class="footer">
+      <strong>contact us</strong><span class="sep">|</span
+      >support.bioclerk@gmail.com<span class="sep">|</span>bioclerk.com<span
+        class="sep"
+        >|</span
+      >+234 904 295 6435
+    </div>
+  </body>
+</html>

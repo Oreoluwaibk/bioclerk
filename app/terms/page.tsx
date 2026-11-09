@@ -6,7 +6,7 @@ import { SiteHeader } from "@/components/site-header";
 export const metadata: Metadata = {
   title: "Terms of Use",
   description:
-    "Terms governing your use of the BioClerk desktop application, including licensing, MedASR notices, and your responsibilities.",
+    "Terms governing your use of the BioClerk mobile and desktop applications, including licensing, MedASR notices, and your responsibilities.",
 };
 
 export default function TermsPage() {
@@ -23,15 +23,15 @@ export default function TermsPage() {
             <dl className="mt-6 grid gap-3 text-sm text-muted sm:grid-cols-3">
               <div>
                 <dt className="font-semibold text-foreground">Version</dt>
-                <dd>0.1</dd>
+                <dd>0.2</dd>
               </div>
               <div>
                 <dt className="font-semibold text-foreground">Applies to</dt>
-                <dd>BioClerk desktop app</dd>
+                <dd>BioClerk mobile and desktop apps</dd>
               </div>
               <div>
                 <dt className="font-semibold text-foreground">Last modified</dt>
-                <dd>September 30, 2026</dd>
+                <dd>November 9, 2026</dd>
               </div>
             </dl>
           </div>
@@ -41,9 +41,10 @@ export default function TermsPage() {
           <p>
             Thank you for choosing BioClerk. These Terms of Use
             (&quot;Terms&quot;) are an agreement between you and the makers of
-            BioClerk governing your use of the BioClerk desktop application (the
-            &quot;App&quot;). By installing or using BioClerk, you agree to
-            these Terms. If you don&apos;t agree, please don&apos;t use the App.
+            BioClerk governing your use of the BioClerk mobile and desktop
+            applications (the &quot;App&quot;). By installing or using
+            BioClerk, you agree to these Terms. If you don&apos;t agree, please
+            don&apos;t use the App.
           </p>
           <p>
             We&apos;ve tried to write these Terms in plain language. Where we
@@ -224,17 +225,35 @@ export default function TermsPage() {
 
           <h2 id="license">Your License to Use BioClerk</h2>
           <p>
-            When you buy BioClerk, we grant you a license to install and
-            activate it on one device at a time — you can deactivate BioClerk on
-            one device and activate it on another whenever you like. This
-            license doesn&apos;t expire.
+            BioClerk offers two ways to pay: a single-device subscription or a
+            multi-device license.
+          </p>
+          <p>
+            On the BioClerk Android app, payment is via a single-device
+            subscription, billed on a recurring basis (shown at checkout) until
+            you cancel.
+          </p>
+          <p>
+            On the BioClerk desktop app, payment is via a single-device
+            subscription, also billed on a recurring basis until you cancel, or
+            a multi-device license, a one-time payment covering one year of use
+            across multiple devices, renewed manually, not auto-billed.
+          </p>
+          <p>
+            Either way, you can deactivate BioClerk on one device and activate
+            it on another whenever you like.
+          </p>
+          <p>
+            You can manage or cancel a subscription at any time from Settings. A
+            multi-device license simply expires at the end of its term unless
+            you renew it.
           </p>
           <p>
             You can also try BioClerk free for 30 days before buying, once per
             device, with no card or account required to start. At the end of
-            your trial, BioClerk keeps every transcript you&apos;ve already made
-            on your device and you can view them on the App, but you&apos;ll
-            need to buy a license to keep dictating.
+            your trial, BioClerk persists every transcript you&apos;ve already
+            made on your device and you can view them in the App, but you&apos;ll
+            need a license or subscription to keep dictating.
           </p>
           <p>
             Either way, this license is for your own use. You may not share,
