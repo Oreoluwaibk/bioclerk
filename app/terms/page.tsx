@@ -23,15 +23,15 @@ export default function TermsPage() {
             <dl className="mt-6 grid gap-3 text-sm text-muted sm:grid-cols-3">
               <div>
                 <dt className="font-semibold text-foreground">Version</dt>
-                <dd>0.2</dd>
+                <dd>0.3</dd>
               </div>
               <div>
                 <dt className="font-semibold text-foreground">Applies to</dt>
-                <dd>BioClerk mobile and desktop apps</dd>
+                <dd>BioClerk mobile, desktop, and web extension</dd>
               </div>
               <div>
                 <dt className="font-semibold text-foreground">Last modified</dt>
-                <dd>November 9, 2026</dd>
+                <dd>November 16, 2026</dd>
               </div>
             </dl>
           </div>
@@ -42,9 +42,9 @@ export default function TermsPage() {
             Thank you for choosing BioClerk. These Terms of Use
             (&quot;Terms&quot;) are an agreement between you and the makers of
             BioClerk governing your use of the BioClerk mobile and desktop
-            applications (the &quot;App&quot;). By installing or using
-            BioClerk, you agree to these Terms. If you don&apos;t agree, please
-            don&apos;t use the App.
+            applications and web extension (the &quot;App&quot;). By installing
+            or using BioClerk, you agree to these Terms. If you don&apos;t
+            agree, please don&apos;t use the App.
           </p>
           <p>
             We&apos;ve tried to write these Terms in plain language. Where we
@@ -225,13 +225,18 @@ export default function TermsPage() {
 
           <h2 id="license">Your License to Use BioClerk</h2>
           <p>
-            BioClerk offers two ways to pay: a single-device subscription or a
-            multi-device license.
+            BioClerk offers three ways to pay: a single-device subscription, a
+            multi-device license, or a usage-based subscription.
           </p>
           <p>
             On the BioClerk Android app, payment is via a single-device
             subscription, billed on a recurring basis (shown at checkout) until
             you cancel.
+          </p>
+          <p>
+            On the BioClerk web extension, payment is via prepaid usage-based
+            billing. You pay for our transcription service and top-up whenever
+            you want.
           </p>
           <p>
             On the BioClerk desktop app, payment is via a single-device
@@ -249,11 +254,11 @@ export default function TermsPage() {
             you renew it.
           </p>
           <p>
-            You can also try BioClerk free for 30 days before buying, once per
-            device, with no card or account required to start. At the end of
-            your trial, BioClerk persists every transcript you&apos;ve already
-            made on your device and you can view them in the App, but you&apos;ll
-            need a license or subscription to keep dictating.
+            You can also try BioClerk free for 30 days in the App before buying,
+            once per device, with no card or account required to start. At the
+            end of your trial, BioClerk persists every transcript you&apos;ve
+            already made on your device and you can view them in the App, but
+            you&apos;ll need a license or subscription to keep dictating.
           </p>
           <p>
             Either way, this license is for your own use. You may not share,
