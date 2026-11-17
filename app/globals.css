@@ -181,3 +181,63 @@ body {
   color: var(--foreground);
   line-height: 1.65;
 }
+
+/* Store badges — equal visual height; display comes from Tailwind utilities */
+.store-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  height: var(--badge-height, 48px);
+  flex: 0 0 auto;
+}
+
+.store-badge__img {
+  display: block;
+  height: var(--badge-height, 48px) !important;
+  width: auto !important;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.store-badge--windows ms-store-badge {
+  display: block;
+  height: var(--badge-height, 48px);
+  line-height: 0;
+}
+
+.store-badge--windows ms-store-badge::part(img) {
+  height: var(--badge-height, 48px) !important;
+  max-height: var(--badge-height, 48px) !important;
+  width: auto !important;
+  max-width: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+/* Mobile: stacked badges, left-aligned */
+@media (max-width: 767px) {
+  .store-badges {
+    width: 100%;
+    max-width: 280px;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px;
+  }
+
+  .store-badge {
+    width: auto;
+    max-width: 100%;
+    height: 52px;
+    justify-content: flex-start;
+  }
+
+  .store-badge__img,
+  .store-badge--windows ms-store-badge,
+  .store-badge--windows ms-store-badge::part(img) {
+    height: 52px !important;
+    max-height: 52px !important;
+    width: auto !important;
+    max-width: 100% !important;
+  }
+}

@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { DownloadForWindows } from "@/components/download-for-windows";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { StoreBadges } from "@/components/store-badges";
 
 export default function Home() {
   return (
@@ -36,12 +36,14 @@ export default function Home() {
               </h1>
               <p className="animate-rise-delay-2 mt-4 max-w-md text-lg leading-relaxed text-sidebar-muted sm:text-xl">
                 Offline clinical dictation. Speak, and BioClerk turns your
-                speech into text — entirely on your computer.
+                speech into text — entirely on your device.
               </p>
-              <div className="animate-rise-delay-3 mt-8 flex flex-wrap items-center gap-3">
-                <DownloadForWindows
-                  location="hero"
-                  className="rounded-[10px] bg-brand px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-deep"
+              <div className="animate-rise-delay-3 mt-8 flex w-full max-w-md flex-col items-start gap-4 sm:max-w-none">
+                <StoreBadges
+                  placement="hero"
+                  theme="light"
+                  size="md"
+                  className="items-start"
                 />
                 <Link
                   href="/#privacy"
@@ -225,9 +227,11 @@ export default function Home() {
                 </a>
                 .
               </p>
-              <DownloadForWindows
-                location="bottom_cta"
-                className="mt-8 inline-flex rounded-[10px] bg-brand-deep px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand"
+              <StoreBadges
+                placement="bottom_cta"
+                theme="dark"
+                size="md"
+                className="mt-8 justify-center"
               />
             </div>
           </div>

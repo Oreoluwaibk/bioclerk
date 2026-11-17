@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useState } from "react";
 import { BrandLogo } from "./brand-logo";
-import { DownloadForWindows } from "./download-for-windows";
+import { StoreBadges } from "./store-badges";
 
 const links = [
   { href: "/#features", label: "Features", match: "features" as const },
@@ -150,9 +150,12 @@ export function SiteHeader({
           >
             Support
           </a>
-          <DownloadForWindows
-            location="header"
-            className="hidden rounded-[10px] bg-brand-deep px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand sm:inline-flex"
+          <StoreBadges
+            placement="header"
+            theme={isSolid ? "dark" : "light"}
+            size="sm"
+            className="hidden md:flex"
+            platforms={["windows", "android"]}
           />
           <button
             type="button"
@@ -216,11 +219,26 @@ export function SiteHeader({
           >
             Support
           </a>
-          <DownloadForWindows
-            location="mobile_menu"
-            className="mt-2 rounded-[10px] bg-brand-deep px-3 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-brand"
-            onNavigate={() => setMenuOpen(false)}
-          />
+          <div
+            className={`mt-4 border-t pt-4 ${
+              isSolid ? "border-border" : "border-brand-mid"
+            }`}
+          >
+            <p
+              className={`mb-3 text-xs font-semibold uppercase tracking-wide ${
+                isSolid ? "text-muted" : "text-sidebar-muted"
+              }`}
+            >
+              Download
+            </p>
+            <StoreBadges
+              placement="mobile_menu"
+              theme={isSolid ? "dark" : "light"}
+              size="md"
+              className="items-start"
+              onNavigate={() => setMenuOpen(false)}
+            />
+          </div>
         </nav>
       </div>
     </header>

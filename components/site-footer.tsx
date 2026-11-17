@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { BrandLogo } from "./brand-logo";
+import { StoreBadges } from "./store-badges";
 
 export function SiteFooter() {
   return (
@@ -11,6 +12,11 @@ export function SiteFooter() {
             Offline clinical dictation. Your recordings stay on your device
             unless you choose to share them.
           </p>
+          <StoreBadges
+            placement="footer"
+            theme="light"
+            size="sm"
+          />
         </div>
         <div>
           <p className="mb-4 text-sm font-semibold">Product</p>
@@ -62,7 +68,7 @@ export function SiteFooter() {
       <div className="border-t border-brand-mid">
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-2 px-5 py-5 text-xs text-sidebar-muted sm:flex-row sm:items-center sm:justify-between sm:px-8">
           <p>© {new Date().getFullYear()} BioClerk. All rights reserved.</p>
-          <p>Desktop app for clinicians · Nigeria</p>
+          <p>Windows · Android · Web extension · Nigeria</p>
         </div>
       </div>
     </footer>
